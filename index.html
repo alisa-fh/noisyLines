@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+ 	<head>
+    <meta charset="UTF-8">
+    <title>Noisy colored lines</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.js"></script>
+		<script type="text/javascript" src="index.js"></script>
+		<script type="text/javascript" src="Lines.js"></script>
+    <link rel="stylesheet" href="indexStyles.css">
+  </head>
+
+  	<body>
+  	<script src="index.js"></script>
+    <div class="controls">
+  		<div class="dragSlideContainer">
+  			<h4>Select how responsive you would like your line:</h4>
+  			<div style="display:inline-block;vertical-align:top;">
+  				<input type="range" min="1" max="5" value ="4" id="dragRange" step="1">
+  			</div>
+  			<div style="display:inline-block;">Value: <span id="dragLabel"></span></div>
+        <div class="info">The higher the value, the more responsive the line is to the mouse.</div>
+  		</div>
+
+  		<div class="hueSlideContainer">
+  			<h4>Select hue value:</h4>
+  			<div style="display:inline-block;vertical-align:top;">
+  				<input type="range" min="1" max="255" value ="100" id="hueRange" step="10">
+  			</div>
+  			<div style="display:inline-block;">Value: <span id="hueLabel"></span></div>
+  		</div>
+
+  		<div class="heightSlideContainer">
+  			<h4>Select height constant:</h4>
+  			<div style="display:inline-block;vertical-align:top;">
+  				<input type="range" min="2" max="10" value ="2" id="heightRange">
+  			</div>
+  			<div style="display:inline-block;">Value: <span id="heightLabel"></span></div>
+        <div class="info">The higher the value, the higher up the line is placed.</div>
+  		</div>
+
+      <label for="flatten">Flatten Switch</label>
+      <input id="flatten" type="checkbox" />
+
+      <label for="gravity">Gravity Switch</label>
+      <input id="gravity" type="checkbox" />
+  	
+  		<input type="button" onclick="getOptions()" value="Create Line" style="width:180px;height:200px;font-size:30px">
+  		<br>
+    </div>
+
+  	<script>
+  		var dragSlider = document.getElementById("dragRange");
+  		var dragOutput = document.getElementById("dragLabel");
+  		dragOutput.innerHTML = dragSlider.value;
+
+  		dragSlider.oninput = function() {
+  			dragOutput.innerHTML = this.value;
+  		}
+
+
+  		var hueSlider = document.getElementById("hueRange");
+  		var hueOutput = document.getElementById("hueLabel");
+  		hueOutput.innerHTML = hueSlider.value;
+
+  		hueSlider.oninput = function() {
+  			hueOutput.innerHTML = this.value;
+  		}
+
+  		var heightSlider = document.getElementById("heightRange");
+  		var heightOutput = document.getElementById("heightLabel");
+  		heightOutput.innerHTML = heightSlider.value;
+
+  		heightSlider.oninput = function() {
+  			heightOutput.innerHTML = this.value;
+  		}
+
+  	</script>
+  </body>
+</html>
