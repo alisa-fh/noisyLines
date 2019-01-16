@@ -47,28 +47,29 @@ function doubleClicked() {
     //Set a default value for newHeightConst
     var newHeightConst = 5;
     //Changes the heightConst depending on where the mouse double-clicked.
-    if (mouseY > 714) {
+    var heightPartition = (windowHeight/10);
+    if (mouseY > windowHeight-heightPartition) {
         newHeightConst = 1;
-    } else if (mouseY > 660) {
+    } else if (mouseY > (windowHeight-(heightPartition*2))) {
         newHeightConst = 2;
-    } else if (mouseY > 582) {
+    } else if (mouseY > (windowHeight-(heightPartition*3))) {
         newHeightConst = 3;
-    } else if (mouseY > 499) {
+    } else if (mouseY > (windowHeight-(heightPartition*4))) {
         newHeightConst = 4;
-    } else if (mouseY > 430) {
+    } else if (mouseY > (windowHeight-(heightPartition*5))) {
         newHeightConst = 5;
-    } else if (mouseY > 360) {
+    } else if (mouseY > (windowHeight-(heightPartition*6))) {
         newHeightConst = 6;
-    } else if (mouseY > 295) {
+    } else if (mouseY > (windowHeight-(heightPartition*7))) {
         newHeightConst = 7;
-    } else if (mouseY > 222) {
+    } else if (mouseY > (windowHeight-(heightPartition*8))) {
         newHeightConst = 8;
-    } else if (mouseY > 140) {
+    } else if (mouseY > (windowHeight-(heightPartition*9))) {
         newHeightConst = 9;
-    } else if (mouseY > 50) {
+    } else if (mouseY > (windowHeight-(heightPartition*10))) {
         newHeightConst = 11;
     } else {
-        newHeightConst = 50;
+        newHeightConst = 13;
     }
 
     //gets the last line in the globalLines and assigns to finalLine
@@ -166,7 +167,7 @@ class lineCollection{
      * @param {boolean} newFlat
      * @returns {undefined} nothing
      */
-    flat(newFlat) {
+    set flat(newFlat) {
         this._flat = newFlat;
     }
 

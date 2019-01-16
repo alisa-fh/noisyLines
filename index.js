@@ -2,6 +2,7 @@
  * Initial setup function, setting up the window and creating a lineCollection object to hold all user created lines.
  */
 function setup() {
+	print(windowHeight);
 	createCanvas(windowWidth, windowHeight); //canvas covers whole screen
 	colorMode(HSB, 255);
 	textAlign(CENTER);
@@ -16,7 +17,6 @@ function draw() {
 	background(50); //setting background color
 	noStroke();
 	fill(255);
-	text("Move the mouse on the lines.", width/2, 100);
 	//iterates through each line in the lineCollection object while the array is not empty
 	if (globalLines.lineSet != []) {
 		for (i = 0; i < globalLines.lineSet.length; i++) {

@@ -13,13 +13,14 @@
   	<body>
   	<script src="index.js"></script>
     <div class="controls">
+		<h1>CREATE YOUR LINE:</h1>
   		<div class="dragSlideContainer">
   			<h4>Select how responsive you would like your line:</h4>
   			<div style="display:inline-block;vertical-align:top;">
   				<input type="range" min="1" max="5" value ="4" id="dragRange" step="1">
   			</div>
   			<div style="display:inline-block;">Value: <span id="dragLabel"></span></div>
-        <div class="info">The higher the value, the more responsive the line is to the mouse.</div>
+        <div class="info">The higher the value, the more responsive the line is to your cursor.</div>
   		</div>
 
   		<div class="hueSlideContainer">
@@ -28,6 +29,7 @@
   				<input type="range" min="1" max="255" value ="100" id="hueRange" step="10">
   			</div>
   			<div style="display:inline-block;">Value: <span id="hueLabel"></span></div>
+			<div class="info">Select your line's hue value, between 1 and 255.</div>
   		</div>
 
   		<div class="heightSlideContainer">
@@ -36,17 +38,29 @@
   				<input type="range" min="2" max="10" value ="2" id="heightRange">
   			</div>
   			<div style="display:inline-block;">Value: <span id="heightLabel"></span></div>
-        <div class="info">The higher the value, the higher up the line is placed.</div>
+        <div class="info">The higher the value selected, the higher up the line is placed on the page.</div>
   		</div>
 
-      <label for="flatten">Flatten Switch</label>
-      <input id="flatten" type="checkbox" />
+		<div class = "tooltip">
+      		<label for="flatten">Flatten Switch</label>
+			<span class = "tooltiptext">This toggle flattens the line, eliminating waves.</span>
+		</div>
+		<input id="flatten" type="checkbox" />
 
-      <label for="gravity">Gravity Switch</label>
-      <input id="gravity" type="checkbox" />
-  	
+		<div class = "tooltip">
+			<label for="gravity">Anti-Gravity Switch</label>
+			<span class = "tooltiptext">This toggle results in the the lines moving to the top of the window.</span>
+		</div>
+		<input id="gravity" type="checkbox" />
+
   		<input type="button" onclick="getOptions()" value="Create Line" style="width:180px;height:200px;font-size:30px">
   		<br>
+		<h3 style="font-style:italic; color:white;">More info:</h3>
+		<ul style="font-style:italic; font-size:12px;">
+			<li>Move your cursor towards the added lines to see them react.</li>
+			<li>Press Z to remove the last added line</li>
+			<li>Double click the page to reposition the last added line</li>
+		</ul>
     </div>
 
   	<script>
@@ -76,6 +90,5 @@
   		}
 
   	</script>
-	<p>test</p>
   </body>
 </html>
