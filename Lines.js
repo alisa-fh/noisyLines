@@ -497,6 +497,17 @@ function refreshLines() {
         print(newLine);
         globalLines.addLine(newLine);
     }
+
+    /**
+     * Original sketch name: Noisy Rainbow
+     *
+     * Original creator: Jason Labbe
+     * His work can be found on: https://www.openprocessing.org/user/60876)
+     *
+     * Link to original sketch: https://www.openprocessing.org/sketch/420376
+     *
+     * @license CC BY-SA 3.0
+     */
 }
 
 ;
